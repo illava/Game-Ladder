@@ -1,5 +1,5 @@
 from flask import Flask, request, abort, redirect, Response, url_for, render_template
-from flask_login import LoginManager, login_required, UserMixin, login_user, current_user
+from flask_login import LoginManager, login_required, UserMixin, login_user, logout_user, current_user
 
 import os
 
@@ -90,6 +90,12 @@ def login():
         return redirect(url_for('index'))
     else:
         return Response(render_template("login.html"))
+
+
+@app.route('/logout')
+def logout():
+    logout_user()
+    return redirect(url_for('login'))
 
 
 @login_manager.user_loader
