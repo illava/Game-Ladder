@@ -11,7 +11,7 @@ export FLASK_ENV=development
 flask run
 ```
 
-On Windows CMD
+On Windows CMD.
 ```cmd
 set FLASK_APP=game_ladder
 set FLASK_ENV=development

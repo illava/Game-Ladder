@@ -66,7 +66,7 @@ def index():
             elif request.form['submit_button'] == 'MinusOne':
                 users_repository.users[current_user.id].value -= 1
         return redirect(url_for('index'))
-    elif request.method == 'GET':
+    else:
         return render_template(
             'index.html',
             username=current_user.username,
