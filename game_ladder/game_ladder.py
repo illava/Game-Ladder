@@ -16,7 +16,6 @@ class User(UserMixin):
         self.username = username
         self.password = password
         self.value = 0
-        return
 
     def is_activate(self):
         return True
@@ -30,7 +29,6 @@ class UsersRepository:
         self.users = dict()
         self.finder = dict()
         self.identifier = 0
-        return
 
     def get_user_by_id(self, id):
         return self.users.get(id)
@@ -39,13 +37,10 @@ class UsersRepository:
         id = self.finder.get(name)
         if id:
             return self.users.get(id)
-        else:
-            return None
 
     def save_user(self, user):
         self.users[user.id] = user
         self.finder[user.username] = user.id
-        return
 
     def next_index(self):
         self.identifier += 1
